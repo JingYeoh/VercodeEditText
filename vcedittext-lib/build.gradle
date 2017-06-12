@@ -9,7 +9,7 @@ publish {
     groupId = 'com.justkiddingbaby'
     artifactId = 'vercodeedittext'
     publishVersion = appVerName
-    desc = 'An Android vercode edittext.（一个安卓验证码输入框）'
+    desc = 'An Android vercode EditText.（一个安卓验证码输入框）'
     website = 'https://github.com/YangJing96/VercodeEditText'
 }
 

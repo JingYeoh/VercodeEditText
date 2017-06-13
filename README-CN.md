@@ -50,3 +50,40 @@ compile 'com.justkiddingbaby:vercodeedittext:最新版本'
 |[figures](/vcedittext-lib/src/main/res/values/attrs.xml)|验证码位数|integer|
 |[verCodeMargin](/vcedittext-lib/src/main/res/values/attrs.xml)|每个验证码的间隔|dimension|
 |[bottomLineSelectedColor](/vcedittext-lib/src/main/res/values/attrs.xml)|底线选择状态下的颜色|reference|
+|[bottomLineNormalColor](/vcedittext-lib/src/main/res/values/attrs.xml)|底线未选中状态下的颜色|reference|
+|[bottomLineHeight](/vcedittext-lib/src/main/res/values/attrs.xml)|底线高度|dimension|
+|[selectedBackgroundColor](/vcedittext-lib/src/main/res/values/attrs.xml)|选中的背景颜色|reference|
+
+## 方法说明
+返回值|方法|说明
+---|---|---
+|void|[setFigures(int figures)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码位数|
+|void|[setVerCodeMargin(int margin)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码之间的间隔|
+|void|[setBottomSelectedColor(int bottomSelectedColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置底线选中状态的颜色|
+|void|[setBottomNormalColor(int bottomNormalColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置底线未选中状态的颜色|
+|void|[setSelectedBackgroundColor(int selectedBackground)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码选中的背景颜色|
+|void|[setBottomLineHeight(int bottomLineHeight)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码底线的高度|
+|void|[setOnVerificationCodeChangedListener([OnVerificationCodeChangedListener](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java) listener)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码变化的监听器|
+
+## 使用
+#### 在布局中使用
+```xml
+  <com.jkb.vcedittext.VerificationCodeEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="123"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        app:bottomLineHeight="2dp"
+        app:bottomLineNormalColor="@color/gravy_light"
+        app:bottomLineSelectedColor="@color/colorAccent"
+        app:figures="4"
+        app:selectedBackgroundColor="@color/colorPrimary_alpha33"
+        app:verCodeMargin="10dp" />
+ ```
+ 
+ ## 发布历史
+ #### v1.0.0(2017/6/12)
+ 1、发布VercodeEditText控件，防止输入溢出.  
+ 2、封装demo.

@@ -48,6 +48,43 @@ compile 'com.justkiddingbaby:vercodeedittext:the latest version'
 ## Attributes instruction
 attribute|instruction|value
 ---|---|---
-|[slideMode](/slidemenu/src/main/res/values/attrs.xml)|sliding mode|left right both none|
-|[slidePadding](/slidemenu/src/main/res/values/attrs.xml)|the content view padding when slide menu is opened|dimension|
-|[slideTime](/slidemenu/src/main/res/values/attrs.xml)|the time of slide menu open,the default value is 800ms|integer|
+|[figures](/vcedittext-lib/src/main/res/values/attrs.xml)|the verification code length|integer|
+|[verCodeMargin](/vcedittext-lib/src/main/res/values/attrs.xml)|the padding for each verification code number|dimension|
+|[bottomLineSelectedColor](/vcedittext-lib/src/main/res/values/attrs.xml)|the color of bottom line is select status|reference|
+|[bottomLineNormalColor](/vcedittext-lib/src/main/res/values/attrs.xml)|the color of bottom line is normal status|reference|
+|[bottomLineHeight](/vcedittext-lib/src/main/res/values/attrs.xml)|the height of bottom line|dimension|
+|[selectedBackgroundColor](/vcedittext-lib/src/main/res/values/attrs.xml)|the background color of verification code is select status|reference|
+
+## Function instruction
+return|function name|instruction
+---|---|---
+|void|[setFigures(int figures)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the verification code length|
+|void|[setVerCodeMargin(int margin)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the padding for each verification code number|
+|void|[setBottomSelectedColor(int bottomSelectedColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the color of bottom line is select status|
+|void|[setBottomNormalColor(int bottomNormalColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the color of bottom line is normal status|
+|void|[setSelectedBackgroundColor(int selectedBackground)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the background color of verification code is select status|
+|void|[setBottomLineHeight(int bottomLineHeight)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the height of bottom line|
+|void|[setOnVerificationCodeChangedListener([OnVerificationCodeChangedListener](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java) listener)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|add the listener when verification value is changing|
+
+## Usage
+#### use in the layout
+```xml
+  <com.jkb.vcedittext.VerificationCodeEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="123"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        app:bottomLineHeight="2dp"
+        app:bottomLineNormalColor="@color/gravy_light"
+        app:bottomLineSelectedColor="@color/colorAccent"
+        app:figures="4"
+        app:selectedBackgroundColor="@color/colorPrimary_alpha33"
+        app:verCodeMargin="10dp" />
+ ```
+ 
+## Release history
+#### v1.0.0(2017/6/12)
+1、release VercodeEditText，Prevent input overflow.  
+2、Encapsulation demo.

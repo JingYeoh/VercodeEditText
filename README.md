@@ -15,3 +15,39 @@ Prevent input overflow.
 - [x] **Prevent input overflow**  
 - [x] **Custom validation code length**  
 - [x] **Provide input value listener**  
+- [x] **Layout height is auto adjust**  
+- [x] **Attributes can be configured for customization**  
+
+## Version
+name|SlideMenuLayout
+---|---
+latest|![Download](https://api.bintray.com/packages/jkb/maven/vercodeedittext/images/download.svg)
+
+## Configure
+#### Maven
+```xml
+<dependency>
+  <groupId>com.justkiddingbaby</groupId>
+  <artifactId>vercodeedittext</artifactId>
+  <version>the latest version</version>
+  <type>pom</type>
+</dependency>
+```
+#### JCenter
+First. add to project build.gradle
+```gradle
+repositories {
+    jcenter()
+}
+```
+Second. add to module build.gradle
+```gradle
+compile 'com.justkiddingbaby:vercodeedittext:the latest version'
+```
+
+## Attributes instruction
+attribute|instruction|value
+---|---|---
+|[slideMode](/slidemenu/src/main/res/values/attrs.xml)|sliding mode|left right both none|
+|[slidePadding](/slidemenu/src/main/res/values/attrs.xml)|the content view padding when slide menu is opened|dimension|
+|[slideTime](/slidemenu/src/main/res/values/attrs.xml)|the time of slide menu open,the default value is 800ms|integer|

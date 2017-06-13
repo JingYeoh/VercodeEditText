@@ -64,7 +64,7 @@ return|function name|instruction
 |void|[setBottomNormalColor(int bottomNormalColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the color of bottom line is normal status|
 |void|[setSelectedBackgroundColor(int selectedBackground)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the background color of verification code is select status|
 |void|[setBottomLineHeight(int bottomLineHeight)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|set the height of bottom line|
-|void|[setOnVerificationCodeChangedListener([OnVerificationCodeChangedListener](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java) listener)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|add the listener when verification value is changing|
+|void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener listener)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|add the listener when verification value is changing|
 
 ## Usage
 #### use in the layout

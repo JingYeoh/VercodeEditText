@@ -63,7 +63,7 @@ compile 'com.justkiddingbaby:vercodeedittext:最新版本'
 |void|[setBottomNormalColor(int bottomNormalColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置底线未选中状态的颜色|
 |void|[setSelectedBackgroundColor(int selectedBackground)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码选中的背景颜色|
 |void|[setBottomLineHeight(int bottomLineHeight)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码底线的高度|
-|void|[setOnVerificationCodeChangedListener([OnVerificationCodeChangedListener](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java) listener)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码变化的监听器|
+|void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener listener)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码变化的监听器|
 
 ## 使用
 #### 在布局中使用

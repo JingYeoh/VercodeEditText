@@ -1,4 +1,4 @@
-# SlideMenuLayout
+# VercodeEditText
 ## 介绍
 一个安卓验证码输入框控件。  
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)

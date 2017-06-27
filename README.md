@@ -86,6 +86,8 @@ return|function name|instruction
  ```
  
 ## Release history
+ #### v1.0.1(2017/6/27)
+1、fix bug:can't get focus when the view is touched.
 #### v1.0.0(2017/6/12)
 1、release VercodeEditText，Prevent input overflow.  
 2、Encapsulation demo.

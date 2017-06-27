@@ -6,11 +6,11 @@
 <img src="https://img.shields.io/badge/license-Apache 2.0-green.svg?style=flat">
 [![API](https://img.shields.io/badge/API-12%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=11)
 
-## Demo
+## 演示
 防止输入溢出.  
 <img src="/img/demo.gif" width="280px"/>
 
-## Features
+## 特性
 - [x] **继承EditText，可以当作EditText使用**  
 - [x] **防止输入溢出**  
 - [x] **自定义验证码位数**  
@@ -18,12 +18,12 @@
 - [x] **高度自适配**  
 - [x] **属性自定义配置**  
 
-## Version
+## 版本
 名称|SlideMenuLayout
 ---|---
 最新版本|![Download](https://api.bintray.com/packages/jkb/maven/vercodeedittext/images/download.svg)
 
-## Configure
+## 配置
 #### Maven
 ```xml
 <dependency>
@@ -85,6 +85,8 @@ compile 'com.justkiddingbaby:vercodeedittext:最新版本'
  ```
  
  ## 发布历史
+ #### v1.0.1(2017/6/27)
+ 1、修复点击后无法获取焦点问题.
  #### v1.0.0(2017/6/12)
  1、发布VercodeEditText控件，防止输入溢出.  
  2、封装demo.

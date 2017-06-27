@@ -51,6 +51,7 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
         initAttrs(attrs);
         setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));//防止出现下划线
         initPaint();
+        setFocusableInTouchMode(true);
         super.addTextChangedListener(this);
     }
 

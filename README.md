@@ -1,4 +1,5 @@
-# VercodeEditText
+<img src="/img/VercodeEditTex.png" width="800px"/>
+
 ## Introduction
 An android Verification code EditText.   
 一个安卓验证码输入框控件。([中文版入口](README-CN.md))  

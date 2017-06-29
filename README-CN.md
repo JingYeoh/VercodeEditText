@@ -4,7 +4,7 @@
 一个安卓验证码输入框控件。  
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 <img src="https://img.shields.io/badge/license-Apache 2.0-green.svg?style=flat">
-[![SDK](https://img.shields.io/badge/API-12%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=11)  
+[![SDK](https://img.shields.io/badge/API-12%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=11)
 ![VercodeEditText](https://api.bintray.com/packages/jkb/maven/vercodeedittext/images/download.svg)
 
 ## 演示

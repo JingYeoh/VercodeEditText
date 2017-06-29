@@ -4,7 +4,8 @@
 一个安卓验证码输入框控件。  
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 <img src="https://img.shields.io/badge/license-Apache 2.0-green.svg?style=flat">
-[![API](https://img.shields.io/badge/API-12%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=11)
+[![SDK](https://img.shields.io/badge/API-12%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=11)  
+![VercodeEditText](https://api.bintray.com/packages/jkb/maven/vercodeedittext/images/download.svg)
 
 ## 演示
 防止输入溢出.  
@@ -21,7 +22,7 @@
 ## 版本
 名称|SlideMenuLayout
 ---|---
-最新版本|![Download](https://api.bintray.com/packages/jkb/maven/vercodeedittext/images/download.svg)
+最新|![VercodeEditText](https://api.bintray.com/packages/jkb/maven/vercodeedittext/images/download.svg)
 
 ## 配置
 #### Maven
@@ -48,23 +49,23 @@ compile 'com.justkiddingbaby:vercodeedittext:最新版本'
 ## 属性说明
 属性|介绍|取值
 ---|---|---
-|[figures](/vcedittext-lib/src/main/res/values/attrs.xml)|验证码位数|integer|
-|[verCodeMargin](/vcedittext-lib/src/main/res/values/attrs.xml)|每个验证码的间隔|dimension|
-|[bottomLineSelectedColor](/vcedittext-lib/src/main/res/values/attrs.xml)|底线选择状态下的颜色|reference|
-|[bottomLineNormalColor](/vcedittext-lib/src/main/res/values/attrs.xml)|底线未选中状态下的颜色|reference|
-|[bottomLineHeight](/vcedittext-lib/src/main/res/values/attrs.xml)|底线高度|dimension|
-|[selectedBackgroundColor](/vcedittext-lib/src/main/res/values/attrs.xml)|选中的背景颜色|reference|
+[figures](/vcedittext-lib/src/main/res/values/attrs.xml)|验证码位数|integer
+[verCodeMargin](/vcedittext-lib/src/main/res/values/attrs.xml)|每个验证码的间隔|dimension
+[bottomLineSelectedColor](/vcedittext-lib/src/main/res/values/attrs.xml)|底线选择状态下的颜色|reference
+[bottomLineNormalColor](/vcedittext-lib/src/main/res/values/attrs.xml)|底线未选中状态下的颜色|reference
+[bottomLineHeight](/vcedittext-lib/src/main/res/values/attrs.xml)|底线高度|dimension
+[selectedBackgroundColor](/vcedittext-lib/src/main/res/values/attrs.xml)|选中的背景颜色|reference
 
 ## 方法说明
 返回值|方法|说明
 ---|---|---
-|void|[setFigures(int figures)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码位数|
-|void|[setVerCodeMargin(int margin)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码之间的间隔|
-|void|[setBottomSelectedColor(int bottomSelectedColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置底线选中状态的颜色|
-|void|[setBottomNormalColor(int bottomNormalColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置底线未选中状态的颜色|
-|void|[setSelectedBackgroundColor(int selectedBackground)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码选中的背景颜色|
-|void|[setBottomLineHeight(int bottomLineHeight)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码底线的高度|
-|void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener listener)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码变化的监听器|
+void|[setFigures(int figures)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码位数
+void|[setVerCodeMargin(int margin)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码之间的间隔
+void|[setBottomSelectedColor(int bottomSelectedColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置底线选中状态的颜色
+|oid|[setBottomNormalColor(int bottomNormalColor)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置底线未选中状态的颜色
+void|[setSelectedBackgroundColor(int selectedBackground)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码选中的背景颜色
+void|[setBottomLineHeight(int bottomLineHeight)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码底线的高度
+void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener listener)](/vcedittext-lib/src/main/java/com/jkb/vcedittext/VerificationAction.java)|设置验证码变化的监听器
 
 ## 使用
 #### 在布局中使用
@@ -85,6 +86,8 @@ compile 'com.justkiddingbaby:vercodeedittext:最新版本'
  ```
  
  ## 发布历史
+ #### v1.0.2(2017/6/29)
+ 1、修复AndroidMainfest.xml中application标签下allowBackup属性为false的冲突.  
  #### v1.0.1(2017/6/27)
  1、修复点击后无法获取焦点问题.
  #### v1.0.0(2017/6/12)

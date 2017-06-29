@@ -1,5 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+apply from: "config.gradle"
+
 buildscript {
     repositories {
         jcenter()
@@ -28,19 +30,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-ext {
-    minSdkVersion = 15
-    targetSdkVersion = 25
-    compileSdkVersion = 25
-    buildToolsVersion = "25.0.2"
-    sourceCompatibilityVersion = JavaVersion.VERSION_1_7
-    targetCompatibilityVersion = JavaVersion.VERSION_1_7
-}
-
-ext.deps = [
-        //Junit
-        junit       : 'junit:junit:4.12',
-        //v
-        appcompat_v7: 'com.android.support:appcompat-v7:25.3.1'
-]

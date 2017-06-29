@@ -1,59 +1,54 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-    def appVerCode = 1
-    def appVerName = "0.0.1"
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
     defaultConfig {
-        applicationId "com.jkb.vercodeedittext"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode appVerCode
-        versionName appVerName
+        applicationId rootProject.ext.app.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.app.versionCode
+        versionName rootProject.ext.app.versionName
     }
+
     compileOptions {
-        sourceCompatibility rootProject.ext.sourceCompatibilityVersion
-        targetCompatibility rootProject.ext.targetCompatibilityVersion
+        sourceCompatibility rootProject.ext.android.sourceCompatibilityVersion
+        targetCompatibility rootProject.ext.android.targetCompatibilityVersion
     }
 
     signingConfigs {
-        debug {
-            storeFile file(STORE_FILE)
-            storePassword STORE_PASSWORD
-            keyAlias KEY_ALIAS
-            keyPassword KEY_PASSWORD
-            v2SigningEnabled false
-        }
-        release {
-            storeFile file(STORE_FILE)
-            storePassword STORE_PASSWORD
-            keyAlias KEY_ALIAS
-            keyPassword KEY_PASSWORD
+        myConfig {
+            storeFile file(rootProject.ext.store.storeKey)
+            storePassword rootProject.ext.store.storePassword
+            keyAlias rootProject.ext.store.keyAlias
+            keyPassword rootProject.ext.store.keyPassword
             v2SigningEnabled false
         }
     }
 
     buildTypes {
         release {
-            minifyEnabled false //混淆编译
-            shrinkResources false //移除无用的资源文件
-            zipAlignEnabled true //是否启用zipAlign压缩
-            signingConfig signingConfigs.release
+            minifyEnabled true
+            //是否清理无用资源
+            shrinkResources true
+            //是否启用zipAlign压缩
+            zipAlignEnabled true
+            signingConfig signingConfigs.myConfig
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled false
-            zipAlignEnabled false
-            shrinkResources false
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.myConfig
+            versionNameSuffix "-debug"
         }
     }
 
-    lintOptions { abortOnError false }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
-    compile deps.appcompat_v7
-    compile project(':vcedittext-lib')
+    compile project(":vcedittext-lib")
 }

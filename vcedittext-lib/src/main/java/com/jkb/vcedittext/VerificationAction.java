@@ -7,7 +7,7 @@ import android.support.annotation.ColorRes;
  * Created by yj on 2017/5/11.
  */
 
-interface VerificationAction {
+public interface VerificationAction {
 
     /**
      * 设置位数

@@ -87,9 +87,11 @@ void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener lis
  ```
  
 ## Release history
- #### v1.0.2(2017/6/29)
- 1、Fix the conflict that allowBackup property is false under the application in AndroidMainfet.xml file.  
- #### v1.0.1(2017/6/27)
+#### v1.0.3(2017/8/15)
+1、make interface class VerificationAction public.  
+#### v1.0.2(2017/6/29)
+1、Fix the conflict that allowBackup property is false under the application in AndroidMainfet.xml file.  
+#### v1.0.1(2017/6/27)
 1、fix bug:can't get focus when the view is touched.
 #### v1.0.0(2017/6/12)
 1、release VercodeEditText，Prevent input overflow.  

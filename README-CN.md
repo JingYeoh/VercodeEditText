@@ -86,6 +86,8 @@ void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener lis
  ```
  
  ## 发布历史
+ #### v1.0.3(2017/8/15)
+ 1、让接口类VerificationAction变为public.  
  #### v1.0.2(2017/6/29)
  1、修复AndroidMainfest.xml中application标签下allowBackup属性为false的冲突.  
  #### v1.0.1(2017/6/27)

@@ -12,6 +12,7 @@
         android:layout_margin="20dp"
         android:inputType="number"
         android:text="123"
+        android:id="@+id/am_et"
         android:textColor="@color/colorPrimary"
         android:textSize="40sp"
         app:bottomLineHeight="2dp"

@@ -2,12 +2,12 @@ ext {
     app = [
             appVerCode   : 1,
             appVerName   : "0.0.1",
-            applicationId: "com.jkb.yjchart"
+            applicationId: "com.jkb.vercodeedittext"
     ]
 
     vercode = [
-            publishCode   : 3,
-            publishVersion: "1.0.2",
+            publishCode   : 4,
+            publishVersion: "1.0.3",
 
             userOrg       : 'jkb',
             groupId       : 'com.justkiddingbaby',

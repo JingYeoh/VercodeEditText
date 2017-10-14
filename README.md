@@ -87,6 +87,8 @@ void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener lis
  ```
  
 ## Release history
+#### v1.0.4(2017/10/14)
+1、Remove label element at AndroidManifest.xml.  
 #### v1.0.3(2017/8/15)
 1、make interface class VerificationAction public.  
 #### v1.0.2(2017/6/29)

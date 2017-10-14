@@ -86,6 +86,8 @@ void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener lis
  ```
  
  ## 发布历史
+ #### v1.0.4(2017/10/14)
+ 1、在AndroidManifest.xml中移除label节点.  
  #### v1.0.3(2017/8/15)
  1、让接口类VerificationAction变为public.  
  #### v1.0.2(2017/6/29)

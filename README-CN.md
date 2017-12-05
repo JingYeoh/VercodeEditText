@@ -86,6 +86,8 @@ void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener lis
  ```
  
  ## 发布历史
+ #### v1.0.5(2017/12/5)
+ 1、修复在点击控件时候可以遇到的Bug  
  #### v1.0.4(2017/10/14)
  1、在AndroidManifest.xml中移除label节点.  
  #### v1.0.3(2017/8/15)

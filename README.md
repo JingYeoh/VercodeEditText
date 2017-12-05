@@ -87,6 +87,8 @@ void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener lis
  ```
  
 ## Release history
+#### v1.0.5(2017/12/5)
+1、Fix the bug that could appear when the view is pressed.
 #### v1.0.4(2017/10/14)
 1、Remove label element at AndroidManifest.xml.  
 #### v1.0.3(2017/8/15)

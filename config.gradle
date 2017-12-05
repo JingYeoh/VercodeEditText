@@ -6,8 +6,8 @@ ext {
     ]
 
     vercode = [
-            publishCode   : 5,
-            publishVersion: "1.0.4",
+            publishCode   : 6,
+            publishVersion: "1.0.5",
 
             userOrg       : 'jkb',
             groupId       : 'com.justkiddingbaby',

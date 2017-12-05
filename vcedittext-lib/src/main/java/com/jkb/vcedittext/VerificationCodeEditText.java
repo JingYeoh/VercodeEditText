@@ -12,7 +12,9 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 
 /**
@@ -118,6 +120,17 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
             heightResult = mEachRectLength;
         }
         setMeasuredDimension(widthResult, heightResult);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            requestFocus();
+            setSelection(getText().length());
+            showKeyBoard(getContext());
+            return false;
+        }
+        return super.onTouchEvent(event);
     }
 
     @Override
@@ -259,5 +272,10 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(metrics);
         return metrics.widthPixels;
+    }
+
+    public void showKeyBoard(Context context) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(this, InputMethodManager.SHOW_FORCED);
     }
 }

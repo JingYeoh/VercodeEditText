@@ -90,6 +90,9 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
         mSelectedBackgroundColor = ta.getColor(R.styleable.VerCodeEditText_selectedBackgroundColor,
                 getColor(android.R.color.darker_gray));
         ta.recycle();
+        
+        // force LTR because of bug: https://github.com/JustKiddingBaby/VercodeEditText/issues/4
+        setLayoutDirection(LAYOUT_DIRECTION_LTR);
     }
 
 

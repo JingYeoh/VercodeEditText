@@ -8,5 +8,8 @@
         <attr name="bottomLineNormalColor" format="reference" />
         <attr name="bottomLineHeight" format="dimension" />
         <attr name="selectedBackgroundColor" format="reference" />
+        <attr name="cursorDuration" format="integer" />
+        <attr name="cursorWidth" format="dimension" />
+        <attr name="cursorColor" format="color|reference" />
     </declare-styleable>
 </resources>

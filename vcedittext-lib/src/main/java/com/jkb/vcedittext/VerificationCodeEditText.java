@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.Build;
 import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
@@ -16,6 +17,9 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 /**
  * 验证码的EditText
@@ -24,6 +28,7 @@ import android.view.inputmethod.InputMethodManager;
 
 public class VerificationCodeEditText extends android.support.v7.widget.AppCompatEditText implements
         VerificationAction, TextWatcher {
+    private static final int DEFAULT_CURSOR_DURATION = 400;
 
     private int mFigures;//需要输入的位数
     private int mVerCodeMargin;//验证码之间的间距
@@ -31,6 +36,9 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
     private int mBottomNormalColor;//未选中的颜色
     private float mBottomLineHeight;//底线的高度
     private int mSelectedBackgroundColor;//选中的背景颜色
+    private int mCursorWidth;//光标宽度
+    private int mCursorColor;//光标颜色
+    private int mCursorDuration;//光标闪烁间隔
 
     private OnVerificationCodeChangedListener onCodeChangedListener;
     private int mCurrentPosition = 0;
@@ -39,6 +47,12 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
     private Paint mNormalBackgroundPaint;
     private Paint mBottomSelectedPaint;
     private Paint mBottomNormalPaint;
+    private Paint mCursorPaint;
+
+    // 控制光标闪烁
+    private boolean isCursorShowing;
+    private TimerTask mCursorTimerTask;
+    private Timer mCursorTimer;
 
     public VerificationCodeEditText(Context context) {
         this(context, null);
@@ -53,6 +67,7 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
         initAttrs(attrs);
         setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));//防止出现下划线
         initPaint();
+        initCursorTimer();
         setFocusableInTouchMode(true);
         super.addTextChangedListener(this);
     }
@@ -72,6 +87,12 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
         mBottomNormalPaint.setColor(mBottomNormalColor);
         mBottomSelectedPaint.setStrokeWidth(mBottomLineHeight);
         mBottomNormalPaint.setStrokeWidth(mBottomLineHeight);
+
+        mCursorPaint = new Paint();
+        mCursorPaint.setAntiAlias(true);
+        mCursorPaint.setColor(mCursorColor);
+        mCursorPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        mCursorPaint.setStrokeWidth(mCursorWidth);
     }
 
     /**
@@ -89,16 +110,46 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
                 dp2px(5));
         mSelectedBackgroundColor = ta.getColor(R.styleable.VerCodeEditText_selectedBackgroundColor,
                 getColor(android.R.color.darker_gray));
+        mCursorWidth = (int) ta.getDimension(R.styleable.VerCodeEditText_cursorWidth, dp2px(1));
+        mCursorColor = ta.getColor(R.styleable.VerCodeEditText_cursorColor, getColor(android.R.color.darker_gray));
+        mCursorDuration = ta.getInteger(R.styleable.VerCodeEditText_cursorDuration, DEFAULT_CURSOR_DURATION);
         ta.recycle();
         
         // force LTR because of bug: https://github.com/JustKiddingBaby/VercodeEditText/issues/4
-        setLayoutDirection(LAYOUT_DIRECTION_LTR);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            setLayoutDirection(LAYOUT_DIRECTION_LTR);
+        }
     }
 
+    private void initCursorTimer() {
+        mCursorTimerTask = new TimerTask() {
+            @Override
+            public void run() {
+                // 通过光标间歇性显示实现闪烁效果
+                isCursorShowing = !isCursorShowing;
+                postInvalidate();
+            }
+        };
+        mCursorTimer = new Timer();
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+
+        // 启动定时任务，定时刷新实现光标闪烁
+        mCursorTimer.scheduleAtFixedRate(mCursorTimerTask, 0, mCursorDuration);
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        mCursorTimer.cancel();
+    }
 
     @Override
     final public void setCursorVisible(boolean visible) {
-        super.setCursorVisible(false);//隐藏光标的显示
+        super.setCursorVisible(visible);//隐藏光标的显示
     }
 
     @Override
@@ -179,6 +230,16 @@ public class VerificationCodeEditText extends android.support.v7.widget.AppCompa
             } else {
                 canvas.drawLine(start, lineY, end, lineY, mBottomNormalPaint);
             }
+            canvas.restore();
+        }
+        //绘制光标
+        if (!isCursorShowing && isCursorVisible() && mCurrentPosition < mFigures && hasFocus()) {
+            canvas.save();
+            int startX = mCurrentPosition * (width + mVerCodeMargin) + width / 2;
+            int startY = height / 4;
+            int endX = startX;
+            int endY = height - height / 4;
+            canvas.drawLine(startX, startY, endX, endY, mCursorPaint);
             canvas.restore();
         }
     }

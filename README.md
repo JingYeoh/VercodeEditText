@@ -19,6 +19,7 @@ Prevent input overflow.
 - [x] **Provide input value listener**  
 - [x] **Layout height is auto adjust**  
 - [x] **Attributes can be configured for customization**  
+- [x] **Custom cursor style**
 
 ## Version
 name|VercodeEditText
@@ -44,7 +45,7 @@ repositories {
 ```
 Second. add to module build.gradle
 ```gradle
-compile 'com.justkiddingbaby:vercodeedittext:the latest version'
+'com.justkiddingbaby:vercodeedittext:the latest version'
 ```
 
 ## Attributes instruction
@@ -56,6 +57,9 @@ attribute|instruction|value
 [bottomLineNormalColor](/vcedittext-lib/src/main/res/values/attrs.xml)|the color of bottom line is normal status|reference
 [bottomLineHeight](/vcedittext-lib/src/main/res/values/attrs.xml)|the height of bottom line|dimension
 [selectedBackgroundColor](/vcedittext-lib/src/main/res/values/attrs.xml)|the background color of verification code is select status|reference
+[cursorDuration](/vcedittext-lib/src/main/res/values/attrs.xml)|the duration of cursor blink|integer
+[cursorColor](/vcedittext-lib/src/main/res/values/attrs.xml)|the color of cursor|integer
+[cursorWidth](/vcedittext-lib/src/main/res/values/attrs.xml)|the width of cursor|integer
 
 ## Function instruction
 return|function name|instruction
@@ -87,6 +91,8 @@ void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener lis
  ```
  
 ## Release history
+#### v1.1.0 (2018/11/1)
+1、Add cursor support.
 #### v1.0.5(2017/12/5)
 1、Fix the bug that could appear when the view is pressed.
 #### v1.0.4(2017/10/14)

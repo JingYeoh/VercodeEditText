@@ -18,6 +18,7 @@
 - [x] **提供输入内容的监听器**  
 - [x] **高度自适配**  
 - [x] **属性自定义配置**  
+- [x] **光标属性自定义**
 
 ## 版本
 名称|SlideMenuLayout
@@ -43,7 +44,7 @@ repositories {
 ```
 第二步，添加至module的build.gradle文件中
 ```gradle
-compile 'com.justkiddingbaby:vercodeedittext:最新版本'
+'com.justkiddingbaby:vercodeedittext:最新版本'
 ```
 
 ## 属性说明
@@ -55,6 +56,9 @@ compile 'com.justkiddingbaby:vercodeedittext:最新版本'
 [bottomLineNormalColor](/vcedittext-lib/src/main/res/values/attrs.xml)|底线未选中状态下的颜色|reference
 [bottomLineHeight](/vcedittext-lib/src/main/res/values/attrs.xml)|底线高度|dimension
 [selectedBackgroundColor](/vcedittext-lib/src/main/res/values/attrs.xml)|选中的背景颜色|reference
+[cursorDuration](/vcedittext-lib/src/main/res/values/attrs.xml)|光标闪烁间隔时间|integer
+[cursorColor](/vcedittext-lib/src/main/res/values/attrs.xml)|光标颜色|integer
+[cursorWidth](/vcedittext-lib/src/main/res/values/attrs.xml)|光标宽度|integer
 
 ## 方法说明
 返回值|方法|说明
@@ -86,6 +90,8 @@ void|[setOnVerificationCodeChangedListener(OnVerificationCodeChangedListener lis
  ```
  
  ## 发布历史
+ #### v1.1.0 (2018/11/1)
+ 1、添加光标属性的支持.
  #### v1.0.5(2017/12/5)
  1、修复在点击控件时候可以遇到的Bug  
  #### v1.0.4(2017/10/14)

@@ -7,25 +7,27 @@
     android:orientation="vertical">
 
     <com.jkb.vcedittext.VerificationCodeEditText
+        android:id="@+id/am_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:inputType="number"
         android:text="123"
-        android:id="@+id/am_et"
         android:textColor="@color/colorPrimary"
         android:textSize="40sp"
         app:bottomLineHeight="2dp"
         app:bottomLineNormalColor="@color/gravy_light"
         app:bottomLineSelectedColor="@color/colorAccent"
+        app:cursorColor="@android:color/holo_purple"
         app:figures="4"
         app:selectedBackgroundColor="@color/colorPrimary_alpha33"
-        app:verCodeMargin="10dp" />
+        app:verCodeMargin="10dp"/>
 
     <com.jkb.vcedittext.VerificationCodeEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:cursorVisible="false"
         android:inputType="number"
         android:text="1234"
         android:textColor="@color/colorPrimary"
@@ -35,7 +37,7 @@
         app:bottomLineSelectedColor="@color/colorAccent"
         app:figures="5"
         app:selectedBackgroundColor="@color/colorPrimary_alpha33"
-        app:verCodeMargin="10dp" />
+        app:verCodeMargin="10dp"/>
 
     <com.jkb.vcedittext.VerificationCodeEditText
         android:layout_width="match_parent"
@@ -48,8 +50,10 @@
         app:bottomLineHeight="2dp"
         app:bottomLineNormalColor="@color/gravy_light"
         app:bottomLineSelectedColor="@color/colorAccent"
+        app:cursorColor="@android:color/white"
+        app:cursorWidth="2dp"
         app:figures="6"
         app:selectedBackgroundColor="@color/colorPrimary_alpha33"
-        app:verCodeMargin="10dp" />
+        app:verCodeMargin="10dp"/>
 
 </LinearLayout>
